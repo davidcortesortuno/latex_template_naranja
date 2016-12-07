@@ -1,0 +1,37 @@
+\documentclass{naranja}
+
+\usepackage{lipsum}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+
+\begin{document}
+
+
+%%%%%%%% ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add an external PDF file in the 'cover' folder
+
+% \thispagestyle{empty}
+% \includepdf[pages=1,pagecommand={\clearpage}]{cover/cover.pdf}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Mini TOC Initialization
+\dominitoc 
+%
+\pdfbookmark{\contentsname}{Contents}
+\tableofcontents
+
+\input{chapters/introduction.tex}
+\clearpage
+\input{chapters/chapter1.tex}
+\clearpage
+\input{chapters/appendix.tex}
+
+% Example bibliography: Some bib styles are still not updated with colours
+\bibliographystyle{unsrtcolor}
+\nocite*
+\bibliography{xampl}
+\addcontentsline{toc}{section}{\protect\numberline{}References}
+
+\end{document}
