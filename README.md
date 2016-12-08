@@ -1,6 +1,6 @@
-![](jpg/preview.jpg)
-
 # Naranja LaTeX template
+
+![](jpg/preview.jpg)
 
 Naranja is a LaTeX class for reports, theses, etc.  This repository includes an
 `example_report.tex` file as a template to start using the class. 
