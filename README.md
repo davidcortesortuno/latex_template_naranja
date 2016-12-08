@@ -11,9 +11,10 @@ To compile the example just run `make`.
 
 ## Fonts
 
-This class uses `URW garamond` for the main text and maths. This font ca be
+This class uses `URW garamond` for the main text and maths. This font can be
 installed from a `lua` script in
-[](https://www.tug.org/fonts/getnonfreefonts/).  Download it and run it with: 
+[https://www.tug.org/fonts/getnonfreefonts/](https://www.tug.org/fonts/getnonfreefonts/).
+Download it and run it with: 
 
     texlua install-getnonfreefonts
 
