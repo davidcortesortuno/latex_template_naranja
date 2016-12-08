@@ -1,4 +1,4 @@
-![](png/preview.png)
+![](png/preview.jpg)
 
 # Naranja LaTeX template
 
