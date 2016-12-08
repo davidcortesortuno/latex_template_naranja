@@ -41,9 +41,9 @@
 % Table of Contents for KOMA
 
 \usepackage{tocstyle}
-\usetocstyle{classic} 
+\usetocstyle{classic}
 \setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3} 
+\setcounter{tocdepth}{3}
 
 %Distances between number and entry
 \settocfeature[toc][0]{spaceafternumber}{15pt}
@@ -56,8 +56,11 @@
 \usepackage{microtype}
 \settocfeature[toc][0]{entryhook}{\large\flafamily\fontseries{bx}\selectfont}
 \settocfeature[toc][0]{pagenumberhook}{\large\flafamily\fontseries{bx}\selectfont}
-\settocfeature[toc][1]{entryhook}{} 
-\settocfeature[toc][2]{entryhook}{\itshape} 
+\settocfeature[toc][1]{entryhook}{}
+\settocfeature[toc][2]{entryhook}{\itshape}
+
+% Add bibliography to TOC
+\usepackage[nottoc,notlot,notlof]{tocbibind}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mini TOC for Chapters
@@ -70,8 +73,8 @@
 \mtcsetdepth{minitoc}{1}% ~ \setcounter{minitocdepth}{2}
 %\renewcommand{\mtcfont}{\small\color{white}}
 \mtcsetfont{minitoc}{*}{\flafamily\footnotesize\color{white}}
-\mtcsetfont{minitoc}{section}{\hypersetup{linkcolor=white}\flafamily\footnotesize\color{white}} 
-% \mtcsetfont{minitoc}{subsection}{\usekomafont{chapterentry}} 
+\mtcsetfont{minitoc}{section}{\hypersetup{linkcolor=white}\flafamily\footnotesize\color{white}}
+% \mtcsetfont{minitoc}{subsection}{\usekomafont{chapterentry}}
 \mtcsettitle{minitoc}{\relax}% remove “Contents”
 \mtcsetfeature{minitoc}{before}{\vspace{0cm}}
 \mtcsetfeature{minitoc}{after}{\vspace{0cm}}
@@ -86,7 +89,7 @@
 \usepackage{bm}
 
 % Better tables
-% For make cell, look at: 
+% For make cell, look at:
 % http://tex.stackexchange.com/questions/2441/
 % how-to-add-a-forced-line-break-inside-a-table-cell/176780#176780
 \usepackage{colortbl}
@@ -214,8 +217,8 @@
   background,
   contents={%
       \begin{tikzpicture}[remember picture, overlay]
-        \fill[back] 
-        ([yshift=-\chapterimageheight] current page.north west) 
+        \fill[back]
+        ([yshift=-\chapterimageheight] current page.north west)
         rectangle (current page.north east);%
       \end{tikzpicture}%
   }
@@ -246,7 +249,7 @@
 
 \usepackage{etoolbox}
 
-% This will make the chapter title go upwards 
+% This will make the chapter title go upwards
 \appto\chapterheadstartvskip{\vspace*{-4.3cm}}
 % This will make enough space after the chapter, where the content starts
 \appto\chapterheadendvskip{\vspace*{5.5cm}}
