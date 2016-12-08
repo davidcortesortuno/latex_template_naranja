@@ -72,3 +72,7 @@ most of the dependencies for this class.
   if the page is odd or even
 * Update table of contents or `tocstyle`
 * Update to a sans serif font (?)
+
+---
+
+This template is licensed under the [MIT License](LICENSE)
