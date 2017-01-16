@@ -35,15 +35,16 @@
 % \usepackage[urw-garamond]{mathdesign}
 % \usepackage[T1]{fontenc}
 % \usepackage{kpfonts}
+
+\usepackage{cmbright}
 \usepackage[default]{lato}
 \renewcommand{\mddefault}{l}% switch default weight to light
+\usepackage[italic]{mathastext}
 
 % \usepackage{lato}
 % \usepackage{fontspec}
 % \usepackage{unicode-math}
 % \setmainfont{Lato Light}
-% 
-\usepackage[italic]{mathastext}
 
 % \setmathfont{Lato Light}
 % % \setmathfont[range=\mathup]  {Lato Light}
