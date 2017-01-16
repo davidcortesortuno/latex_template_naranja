@@ -1,5 +1,5 @@
 % KOMA script book
-\LoadClass[12pt]{scrbook}
+\LoadClass[11pt]{scrbook}
 
 \usepackage[usenames,dvipsnames]{xcolor}
 
@@ -25,17 +25,31 @@
 % this script: https://www.tug.org/fonts/getnonfreefonts/
 % Download and run it with: texlua install-getnonfreefonts
 % Now we can set the roman, serif and math fonts:
-\renewcommand{\rmdefault}{ugm}
-% Set the seriff (I shot the Seriff)
-\renewcommand{\sfdefault}{ugm}
-% Enconding according to the doc: <texmf>/doc/fonts/urw
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-% Set the math fonts using mathdesign
-\usepackage[urw-garamond]{mathdesign}
+% \renewcommand{\rmdefault}{ugm}
+% % Set the seriff (I shot the Seriff)
+% \renewcommand{\sfdefault}{ugm}
+% % Enconding according to the doc: <texmf>/doc/fonts/urw
+% \usepackage[T1]{fontenc}
+% \usepackage{textcomp}
+% % Set the math fonts using mathdesign
+% \usepackage[urw-garamond]{mathdesign}
 % \usepackage[T1]{fontenc}
 % \usepackage{kpfonts}
-\usepackage{lato}
+\usepackage[default]{lato}
+\renewcommand{\mddefault}{l}% switch default weight to light
+
+% \usepackage{lato}
+% \usepackage{fontspec}
+% \usepackage{unicode-math}
+% \setmainfont{Lato Light}
+% 
+\usepackage[italic]{mathastext}
+
+% \setmathfont{Lato Light}
+% % \setmathfont[range=\mathup]  {Lato Light}
+% % \setmathfont[range=\mathbfup]{Lato Bold}
+% % \setmathfont[range=\mathbfit]{Lato Bold Italic}
+% \setmathfont[range=\mathit]  {Lato Light Italic}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Table of Contents for KOMA
