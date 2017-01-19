@@ -1,5 +1,5 @@
 % KOMA script book
-\LoadClass[11pt]{scrbook}
+\LoadClass[11pt,twoside=true]{scrbook}
 
 \usepackage[usenames,dvipsnames]{xcolor}
 
@@ -178,6 +178,9 @@
 % CAPTIONS
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{changepage}
+\strictpagecheck
+
 % To use tikz regions as south, west, etc
 % calc is for summing coordinates
 \usetikzlibrary{positioning,calc}
@@ -186,28 +189,56 @@
 \DeclareCaptionFormat{sidewise}{%
     % A small negative space to have the caption behind the left margin
     % This approach produces a lot of hbox warnings!
-    \hspace{-1.3cm}
-    \begin{tikzpicture}
-        % The space for the caption text (figure description)
-        % with the width of the main text
-        \node (caption text) [align=left] {%
-        \begin{tabular}{p{\textwidth}}
-            \small #3
-        \end{tabular}};
-        % The label, for example: Figure 2
-        % in a rotated rectangle, next to the caption text
-        % (north west of the caption box)
-        \node (caption label) [rotate=90, inner xsep=0pt,%
-            left=5mm of caption text.north west] {#1};
-        % A vertical black line (back color) whose height adapts
-        % to the caption text height
-        \draw [line width=1pt, back] (caption text.north west) -- ($(caption text.south west)+(0, 0.55)$);
-        % An orange (fore) vertical line next to the black one
-        % (we use xshift for this)
-        % we also use calc to get the line upper (yshift does not seem to work)
-        \draw [line width=1pt, fore]%
-            ([xshift=.35em]caption text.north west) -- ($(caption text.south west) + (.35em, 0.55)$);
-    \end{tikzpicture}}
+
+    \checkoddpage
+    \ifoddpage
+        \hspace{-1.3cm}
+        \begin{tikzpicture}
+            % The space for the caption text (figure description)
+            % with the width of the main text
+            \node (caption text) [align=left] {%
+            \begin{tabular}{p{\textwidth}}
+                \small #3
+            \end{tabular}};
+            % The label, for example: Figure 2
+            % in a rotated rectangle, next to the caption text
+            % (north west of the caption box)
+            \node (caption label) [rotate=90, inner xsep=0pt,%
+                left=5mm of caption text.north west] {#1};
+            % A vertical black line (back color) whose height adapts
+            % to the caption text height
+            \draw [line width=1pt, back] (caption text.north west) -- ($(caption text.south west)+(0, 0.55)$);
+            % An orange (fore) vertical line next to the black one
+            % (we use xshift for this)
+            % we also use calc to get the line upper (yshift does not seem to work)
+            \draw [line width=1pt, fore]%
+                ([xshift=.35em]caption text.north west) -- ($(caption text.south west) + (.35em, 0.55)$);
+        \end{tikzpicture}
+    \else
+        \hspace{-0.5cm}
+        \begin{tikzpicture}
+            % The space for the caption text (figure description)
+            % with the width of the main text
+            \node (caption text) [align=left] {%
+            \begin{tabular}{p{\textwidth}}
+                \small #3
+            \end{tabular}};
+            % The label, for example: Figure 2
+            % in a rotated rectangle, next to the caption text
+            % (north west of the caption box)
+            \node (caption label) [rotate=-90, inner xsep=0pt,%
+                right=5mm of caption text.north east] {#1};
+            % A vertical black line (back color) whose height adapts
+            % to the caption text height
+            \draw [line width=1pt, back] (caption text.north east) -- ($(caption text.south east)+(0, 0.55)$);
+            % An orange (fore) vertical line next to the black one
+            % (we use xshift for this)
+            % we also use calc to get the line upper (yshift does not seem to work)
+            \draw [line width=1pt, fore]%
+                ([xshift=.35em]caption text.north east) -- ($(caption text.south east) + (.35em, 0.55)$);
+        \end{tikzpicture}
+    \fi
+}
 
 % Set the caption style:
 
